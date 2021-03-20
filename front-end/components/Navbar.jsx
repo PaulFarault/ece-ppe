@@ -7,7 +7,7 @@ export default () => {
         <Link href="/">
           <a>Index</a>
         </Link>
-        <Link href="/map">
+        <Link href="/carte">
           <a>Map</a>
         </Link>
       </nav>

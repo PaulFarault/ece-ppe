@@ -46,7 +46,7 @@ const Index = () => {
             locations.map(loc =>
               <li>
                 <Link href={{
-                  pathname: '/map',
+                  pathname: '/carte',
                   query: {
                     lat: loc.geometry.coordinates[0],
                     long: loc.geometry.coordinates[1]
