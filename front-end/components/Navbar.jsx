@@ -5,10 +5,13 @@ export default () => {
     <>
       <nav>
         <Link href="/">
-          <a>Index</a>
+          <a>Accueil</a>
         </Link>
         <Link href="/carte">
-          <a>Map</a>
+          <a>Carte</a>
+        </Link>
+        <Link href="/projet">
+          <a>Le projet</a>
         </Link>
       </nav>
     </>
