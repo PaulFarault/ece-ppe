@@ -5,19 +5,16 @@ import dynamic from 'next/dynamic'
 import 'leaflet/dist/leaflet.css'
 
 const Map = () => {
-  const router = useRouter()
-  const position = [router.query.long, router.query.lat]
+  const { query: { long, lat } } = useRouter()
 
   // Nécessité de passer par cet import pour ne pas générer la page côté serveur (bug de Leaflet)
   const MapComponent = dynamic(
     () => import('../components/Map'),
     {
       loading: () => <p>A map is loading</p>,
-      ssr: false // Prevents server-side render
+      ssr: false // Empèche le rendu côté server
     }
   )
-
-  console.log(router.query);
 
   return (
     <>
@@ -27,7 +24,7 @@ const Map = () => {
 
       <Layout>
         <h1>Page de la carte</h1>
-        <MapComponent position={position} />
+        <MapComponent position={[long, lat]} />
       </Layout>
     </>
   )
