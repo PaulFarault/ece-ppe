@@ -5,7 +5,7 @@ import { icon } from "leaflet"
 
 const ICON = icon({
   iconUrl: "/map-marker-alt-solid.png",
-  iconSize: [32, 32],
+  iconSize: [24, 32],
 })
 
 export default ({ position }) => {
