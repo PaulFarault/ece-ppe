@@ -21,9 +21,14 @@ const Map = () => {
       <Head>
         <title>Carte</title>
       </Head>
+      
 
       <Layout>
-        <h1>Page de la carte</h1>
+      <header>
+        <img src="/projet/logo.png" width='20%' />
+        <h1>LA CARTE</h1>
+      </header>
+        
         <MapComponent position={[long, lat]} />
       </Layout>
     </>

@@ -3,19 +3,33 @@ import Link from 'next/link'
 export default () => {
   return (
     <>
-      <nav>
-        <Link href="/">
-          <a>Accueil</a>
-        </Link>
-        <Link href="/carte">
-          <a>Carte</a>
-        </Link>
-        <Link href="/projet">
-          <a>Le projet</a>
-        </Link>
-        <Link href="/nouvelle">
+      <nav >
+        <ul >
+          <li >
+            <Link href="/">
+            <a>Accueil</a>
+            </Link>
+          </li>
+          <li >
+            <Link href="/carte">
+            <a>Carte</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/projet">
+            <a>Projet</a>
+            </Link>
+          </li>
+          <li>
+          <Link href="/nouvelle">
           <a>Creation AMAP</a>
-        </Link>
+          </Link>
+          </li>
+        </ul>
+        
+        
+        
+        
       </nav>
     </>
   )

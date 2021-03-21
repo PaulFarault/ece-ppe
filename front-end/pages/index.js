@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Component } from 'react/cjs/react.production.min'
 
 const Index = () => {
   const [searchText, setSearchText] = useState('')
@@ -30,9 +31,16 @@ const Index = () => {
       </Head>
 
       <Layout>
-        <h1>Page principale</h1>
+      <header>
+          <img src="/projet/logo.png" width='20%' />
+          <h1>ACCUEIL</h1>
+        </header>
+        
         <form>
-          <input
+        <div className='paragraph'>
+        <p>
+        <label>Rechercher une AMAP : </label>
+        <input
             type="text"
             id="search"
             placeholder="Rechercher une ville"
@@ -40,7 +48,13 @@ const Index = () => {
             value={searchText}
             onInput={e => setSearchText(e.target.value)}
           />
+        </p>
+        </div>
+        
         </form>
+        <div className='paragraph'>
+          <p>Résultats de la recherche :</p>
+        
         <ul>
           {
             locations.map(loc =>
@@ -56,6 +70,7 @@ const Index = () => {
             )
           }
         </ul>
+        </div>
       </Layout>
     </>
   )
