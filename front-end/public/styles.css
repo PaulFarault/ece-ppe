@@ -1,14 +1,67 @@
+body {
+    background-color :rgb(179, 212, 182);
+}
+header {
+
+    background-color :rgb(213, 236, 214);
+}
 h1 {
-    color : red;
+    display :flex;
+    justify-content : space-evenly;
+    color : rgba(10, 63, 10, 0.719);
+    align-items: center;
+    font-size : 80px;
+    margin-right: 10%; 
+    margin-left: 10%; 
 }
 
 h2 {
-    color : green ;
+    display :flex;
+    text-align:right;
+    color : rgba(35, 134, 35, 0.719);
+    font-size : 45px;
+    margin-right: 10%; 
+    margin-left: 10%; 
 }
-.paragraph{
+h3 {
     display : flex ;
     justify-content : space-evenly ;
     align-items: center;
-    color : blue ;
     text-align : center;
+    color : rgba(13, 75, 13, 0.719);
+    font-size : 50px;
+}
+
+.paragraph{
+    background-color: rgb(179, 212, 182);
+    display : flex ;
+    justify-content : space-evenly ;
+    align-items: center;
+    color : rgba(19, 49, 24, 0.952) ;
+    text-align : center;
+    font-size : 25px;
+    margin-right: 10%; 
+    margin-left: 10%;
+}
+.paragraph2{
+    background-color: rgb(179, 212, 182);
+    display : flex ;
+    justify-content :space-evenly ;
+    align-items: center;
+    color : rgba(19, 49, 24, 0.952) ;
+    text-align :justify;
+    font-size : 25px;
+    margin-right: 10%; 
+    margin-left: 10%; 
+
+}
+p{
+    padding-left:30px;
+    padding-right: 30px;;
+}
+#image {
+    display : flex ;
+    justify-content :space-around ;
+    align-items: center;
+
 }
