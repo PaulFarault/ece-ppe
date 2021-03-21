@@ -13,6 +13,9 @@ export default () => {
         <Link href="/projet">
           <a>Le projet</a>
         </Link>
+        <Link href="/nouvelle">
+          <a>Creation AMAP</a>
+        </Link>
       </nav>
     </>
   )
