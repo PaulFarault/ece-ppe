@@ -1,9 +1,6 @@
 import Layout from '../components/Layout'
 import Head from 'next/head'
-//? question 
-//!important
-//TODO tache a faire
-//*important commantaire
+import Link from 'next/link'
 
 const Projet = () => {
 
@@ -43,9 +40,12 @@ const Projet = () => {
             </div>
 
             <h3> Fais un tour sur notre carte interactive et <br /> trouve l’AMAP proche de chez toi !</h3>
-            <div id="image">
-              <img src="/projet/logo_map_bouton.png" title="Cliquer pour accéder à la carte !" width='20%' id='image' />
-            </div>
+    
+            <Link href="/carte">
+              <a id="image">
+                <img src="/projet/logo_map_bouton.png" title="Cliquer pour accéder à la carte !" width='20%' id='image' />
+              </a>  
+            </Link>
 
             <h2> Une AMAP quèsaco ?</h2>
 
