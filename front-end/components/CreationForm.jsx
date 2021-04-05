@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 // Material ui
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
@@ -15,9 +16,23 @@ export default () => {
   const [phone, setPhone] = useState("")
   const [email, setEmail] = useState("")
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-
+    const { data } = await axios(
+      {
+        method: 'post',
+        url: `http://localhost:3001/amap`,
+        data: {
+          name,
+          address,
+          lat,
+          long,
+          phone,
+          email
+        }
+      }
+    )
+    console.log(data)
   }
 
   return (
