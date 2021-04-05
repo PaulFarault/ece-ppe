@@ -1,39 +1,53 @@
 import Layout from '../components/Layout'
 import Head from 'next/head'
-
+// Material ui
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography'
 
 const Nouvelle = () => {
 
-    return (
-        <>
-            <Head>
-                <title>Nouvelle</title>
-            </Head>
+  return (
+    <>
+      <Head>
+        <title>Nouvelle</title>
+      </Head>
 
-            <Layout>
-                <header>
-                    <img src="/projet/logo.png" width='20%' />
-                    <h1>CREATION NOUVELLE AMAP</h1>
-                </header>
+      <Layout>
+        <header>
+          <h1>CREATION NOUVELLE AMAP</h1>
+        </header>
 
-                <h2>Formulaire d'inscription</h2>
-                <div className='paragraph'> 
-                <p>
-                    <label>Prénom</label> : <input type="text" name="prenom" /><br/>
-                    <label>Nom </label> : <input type="text" name="nom" /><br/>
-                    <label>Nom de l'AMAP </label> : <input type="text" name="nomAmap" /><br/>
-                    <label>Adresse de l'AMAP </label> : <input type="text" name="adresse" /><br/>
-                    <label>Numéro de téléphone </label> : <input type="tel" name="numtel" /><br/>
-                    <label>Email</label> : <input type="email" name="email"/><br/>
-                    <p>As tu déjà un site web ? </p>
-                    <label>Si oui, entre l'URL </label> : <input type="url" /><br/>
-                    <p>Si non, clique sur Envoyer et c'est parti pour le créer !</p>
-                    <input type="submit" value="Envoyer" />
-                </p>
-                </div>
-                
-            </Layout>
-        </>
-    )
+        <form autoComplete="off">
+          <Paper style={{ padding: 16 }}>
+            <Grid container alignItems="flex-start" spacing={2}>
+              <Typography variant="h3" align="center">Mon AMAP</Typography>
+              <Grid item xs={12}>
+                <TextField id="name" label="Nom de l'AMAP" fullWidth />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField id="address" label="Adresse" fullWidth />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField id="lat" label="Latitude" fullWidth />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField id="long" label="Longitude" fullWidth />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField id="phone" label="Numéro de téléphone" fullWidth />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField id="email" label="Adresse email" fullWidth />
+              </Grid>
+              <Button variant="contained" type="submit" color="primary">Ajouter mon AMAP</Button>
+            </Grid>
+          </Paper>
+        </form>
+      </Layout>
+    </>
+  )
 }
 export default Nouvelle
