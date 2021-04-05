@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "develop": "nodemon bin/start"
+    "develop": "nodemon bin/start",
+    "reset": "node bin/reset"
   },
   "author": "",
   "license": "ISC",
