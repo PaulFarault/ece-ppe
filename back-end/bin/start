@@ -3,9 +3,9 @@
 const app = require('../src/app')
 
 const config = {
-  port: 3000
+  port: 3001
 }
 
 app.listen(config.port, () => {
-  console.log(`Chat is waiting for you at http://localhost:${config.port}`)
+  console.log(`Server is waiting for you at http://localhost:${config.port}`)
 })
