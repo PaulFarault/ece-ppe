@@ -9,7 +9,6 @@ Cloner le repository et installer les dépendances
 ```
 git clone https://github.com/PaulFarault/ece-ppe.git amap
 cd amap
-npm install
 ```
 
 ### Base de données
@@ -21,18 +20,30 @@ docker build -t amapdb .
 ```
 
 * Lancer une instance grace au `docker-compose.yaml`
-```
+``` bash
 docker-compose up -d
 ```
 
 * Accéder à pgAdmin pour suivre l'état de la bdd à l'adresse (localhost:8080)[http://localhost:8080/]
 
+### Back-end
+Les actions suivantes concernent le dossier *back-end* (`cd back-end`)
+
+* Uniquement la première fois : installer les dépendances
+``` bash
+npm install
+```
 
 ### Front-end
 Les actions suivantes concernent le dossier *front-end* (`cd front-end`)
 
-* Lancer le front
+* Uniquement la première fois : installer les dépendances
+``` bash
+npm install
 ```
+
+* Lancer le front
+``` bash
 npm run dev
 ```
 
