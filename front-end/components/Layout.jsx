@@ -1,10 +1,16 @@
 import Navbar from './Navbar'
 
+import styles from './Layout.module.scss'
+
 export default ({ children }) => {
   return (
     <>
-      <Navbar />
-      {children}
+      <header>
+        <Navbar />
+      </header>
+      <main className={styles.main}>
+        {children}
+      </main>
     </>
   )
 }
