@@ -1,0 +1,36 @@
+version: "3.5"
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: amapdb
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: amap
+    volumes:
+      - ./.volume/main:/var/lib/postgresql/data
+    networks:
+      - db
+    ports:
+      - '5432:5432'
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    networks:
+      - db
+    ports:
+      - "8080:80"
+
+networks: 
+  db:
+    driver: bridge
