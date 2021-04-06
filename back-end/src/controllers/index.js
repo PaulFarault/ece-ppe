@@ -35,6 +35,14 @@ module.exports = {
       console.error(e.message)
     }
   },
+  readAllPerim: async(ignore,res) => {
+    try {
+      const resp = await data.readAllAmapPerimeter(req.body)
+      res.json(resp)
+    } catch(e) {
+      console.error(e.message)
+    }
+  },
   delete: async (req, res) => {
     const { id } = req.params
     try {

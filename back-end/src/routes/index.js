@@ -9,3 +9,4 @@ module.exports = router
   .get('/amap/:id', controller.read)
   .delete('/amap/:id', controller.delete)
   .put('/amap/:id', controller.update)
+  .get('/amap/perim', controller.readAllPerim)
