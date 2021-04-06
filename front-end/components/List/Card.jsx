@@ -5,7 +5,10 @@ export default ({ amap }) => {
   return (
     <>
       <Typography variant="h5">{amap.amap_name}</Typography>
-      <Typography variant="overline">{amap.amap_address}</Typography>
+      <Typography variant="overline">
+        {amap.amap_address}
+        {amap.distance && " ( " + (amap.distance / 1000).toFixed(1) + " km)"}
+      </Typography>
     </>
   )
 }
