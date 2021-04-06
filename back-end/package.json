@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "develop": "nodemon bin/start",
+    "dev": "nodemon bin/start",
     "reset": "node bin/reset"
   },
   "author": "",
