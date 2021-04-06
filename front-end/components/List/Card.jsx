@@ -3,8 +3,23 @@ import Typography from '@material-ui/core/Typography'
 
 export default ({ amap }) => {
   return (
-    <Card>
-      <Typography variant="h4">{amap.amap_name}</Typography>
-    </Card>
+    <>
+      <div>
+        <Typography variant="h5">{amap.amap_name}</Typography>
+        <Typography variant="overline">{amap.amap_address}</Typography>
+      </div>
+      <div>
+        <Typography variant="h5">{amap.amap_name}</Typography>
+        <Typography variant="overline">{amap.amap_address}</Typography>
+      </div>
+      <div>
+        <Typography variant="h5">{amap.amap_name}</Typography>
+        <Typography variant="overline">{amap.amap_address}</Typography>
+      </div>
+      <div>
+        <Typography variant="h5">{amap.amap_name}</Typography>
+        <Typography variant="overline">{amap.amap_address}</Typography>
+      </div>
+    </>
   )
 }
