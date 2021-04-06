@@ -27,19 +27,18 @@ module.exports = {
       console.error(e.message)
     }
   },
-  readAll: async (ignore, res) => {
+  readAll: async (req, res) => {
+    const { lat, long } = req.body
     try {
-      const resp = await data.readAllAmapsDb()
+      let resp
+      if (lat == undefined || long == undefined) {
+        resp = await data.readAllAmapsDb()
+      }
+      else {
+        resp = await data.readAllAmapsNearPointDb(lat, long)
+      }
       res.json(resp)
     } catch (e) {
-      console.error(e.message)
-    }
-  },
-  readAllPerim: async(ignore,res) => {
-    try {
-      const resp = await data.readAllAmapPerimeter(req.body)
-      res.json(resp)
-    } catch(e) {
       console.error(e.message)
     }
   },
