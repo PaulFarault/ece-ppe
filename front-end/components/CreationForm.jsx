@@ -7,8 +7,16 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 export default () => {
+
+  const [open, setOpen] = useState(false);
 
   const [name, setName] = useState("")
   const [address, setAddress] = useState("")
@@ -33,8 +41,22 @@ export default () => {
         }
       }
     )
-    console.log(data)
+    setOpen(true)
+    setName("")
+    setAddress("")
+    setLat("")
+    setLong("")
+    setPhone("")
+    setEmail("")
   }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const [locations, setLocations] = useState([])
 
@@ -135,6 +157,11 @@ export default () => {
               </Button>
           </Grid>
         </Paper>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success">
+            L'amap a bien été créée !
+        </Alert>
+        </Snackbar>
       </form>
     </>
   )
