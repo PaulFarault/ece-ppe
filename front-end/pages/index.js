@@ -62,8 +62,8 @@ const Index = () => {
                   <Link href={{
                     pathname: '/carte',
                     query: {
-                      lat: loc.geometry.coordinates[0],
-                      long: loc.geometry.coordinates[1]
+                      lat: loc.geometry.coordinates[1],
+                      long: loc.geometry.coordinates[0]
                     }
                   }}>{loc.properties.label}</Link>
                 </li>
