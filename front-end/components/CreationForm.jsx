@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, Fragment, useEffect } from 'react'
 import axios from 'axios'
 // Material ui
 import Paper from '@material-ui/core/Paper';
@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 export default () => {
 
@@ -35,6 +36,31 @@ export default () => {
     console.log(data)
   }
 
+  const [locations, setLocations] = useState([])
+
+  useEffect(() => {
+    if (address !== "") {
+      fetchLocations()
+    } else {
+      setLocations([])
+    }
+  }, [address])
+
+
+  const fetchLocations = async () => {
+    let response = await fetch(' https://api-adresse.data.gouv.fr/search/?q=' + address + '&autocomplete=1&limit=7&type=housenumber')
+    response = await response.json()
+    setLocations(response.features)
+  }
+
+  const fetchLocation = async (event, value) => {
+    let response = await fetch(' https://api-adresse.data.gouv.fr/search/?q=' + value + '&autocomplete=0&limit=1&type=housenumber')
+    response = await response.json()
+    setLat(response.features[0].geometry.coordinates[1])
+    setLong(response.features[0].geometry.coordinates[0])
+  }
+
+
   return (
     <>
       <form autoComplete="off" onSubmit={handleSubmit}>
@@ -51,13 +77,18 @@ export default () => {
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                id="address"
-                label="Adresse"
-                fullWidth
-                value={address}
-                onChange={e => setAddress(e.target.value)}
+
+              <Autocomplete
+                onChange={fetchLocation}
+                inputValue={address}
+                onInputChange={(event, newAdress) => {
+                  setAddress(newAdress);
+                }}
+                options={locations.map(loc => loc.properties.label)}
+                renderInput={(params) => <TextField {...params} label="Addresse" />}
               />
+
+
             </Grid>
             <Grid item xs={6}>
               <TextField
