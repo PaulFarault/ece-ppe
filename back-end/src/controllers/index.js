@@ -31,7 +31,7 @@ module.exports = {
     const { lat, long } = req.params
     try {
       let resp
-      if (lat == undefined || long == undefined) {
+      if (lat == 'undefined' || long == 'undefined') {
         resp = await data.readAllAmapsDb()
       }
       else {
