@@ -31,45 +31,45 @@ const Index = () => {
       </Head>
 
       <Layout>
-      <header>
+        <header>
           <img src="/projet/logo.png" width='20%' />
           <h1>ACCUEIL</h1>
         </header>
-        
+
         <form>
-        <div className='paragraph'>
-        <p>
-        <label>Rechercher une AMAP : </label>
-        <input
-            type="text"
-            id="search"
-            placeholder="Rechercher une ville"
-            autoComplete="off"
-            value={searchText}
-            onInput={e => setSearchText(e.target.value)}
-          />
-        </p>
-        </div>
-        
+          <div className='paragraph'>
+            <p>
+              <label>Rechercher une AMAP : </label>
+              <input
+                type="text"
+                id="search"
+                placeholder="Rechercher une ville"
+                autoComplete="off"
+                value={searchText}
+                onInput={e => setSearchText(e.target.value)}
+              />
+            </p>
+          </div>
+
         </form>
         <div className='paragraph'>
           <p>Résultats de la recherche :</p>
-        
-        <ul>
-          {
-            locations.map(loc =>
-              <li>
-                <Link href={{
-                  pathname: '/carte',
-                  query: {
-                    lat: loc.geometry.coordinates[0],
-                    long: loc.geometry.coordinates[1]
-                  }
-                }}>{loc.properties.label}</Link>
-              </li>
-            )
-          }
-        </ul>
+
+          <ul>
+            {
+              locations.map(loc =>
+                <li>
+                  <Link href={{
+                    pathname: '/carte',
+                    query: {
+                      lat: loc.geometry.coordinates[0],
+                      long: loc.geometry.coordinates[1]
+                    }
+                  }}>{loc.properties.label}</Link>
+                </li>
+              )
+            }
+          </ul>
         </div>
       </Layout>
     </>

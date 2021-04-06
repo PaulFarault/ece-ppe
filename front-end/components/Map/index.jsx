@@ -1,30 +1,31 @@
 import Marker from './Marker'
 import MapBg from './MapBg'
 import 'leaflet/dist/leaflet.css'
-import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
-const useFetch = url => {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
+const useQuery = () => {
+  const { query: { long, lat } } = useRouter()
+  let position = [lat, long]
+  let zoom = 13
 
-  useEffect(async () => {
-    const response = await fetch(url)
-    const data = await response.json()
-    setData(data)
-    setLoading(false)
-  }, [])
+  if (long === undefined || lat === undefined) {
+    // Coordonnées de la France
+    position = [46.71109, 1.7191036]
+    zoom = 6
+  }
 
-  return { data, loading }
+  return { position, zoom }
 }
 
+export default ({ amaps, loading, styles }) => {
 
-export default ({ position }) => {
-
-  const { data, loading } = useFetch(`http://localhost:3001/amap`)
+  const { position, zoom } = useQuery()
 
   return (
-    <MapBg position={position}>
-      {!loading && data.map(amap => (<Marker amap={amap} />))}
-    </MapBg>
+    <div className={styles.side}>
+      <MapBg position={position} zoom={zoom}>
+        {!loading && amaps.map(amap => (<Marker amap={amap} />))}
+      </MapBg>
+    </div>
   )
 }

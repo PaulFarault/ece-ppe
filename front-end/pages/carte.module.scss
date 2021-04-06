@@ -1,0 +1,9 @@
+.side {
+  width: 50%;
+}
+
+.main {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-flow: row wrap;
+}

@@ -7,7 +7,6 @@ const ICON = icon({
 })
 
 export default ({ amap }) => {
-  console.log(amap)
   return (
     <Marker
       position={[amap.latitude, amap.longitude]}
