@@ -28,7 +28,7 @@ module.exports = {
     }
   },
   readAll: async (req, res) => {
-    const { lat, long } = req.body
+    const { lat, long } = req.params
     try {
       let resp
       if (lat == undefined || long == undefined) {
