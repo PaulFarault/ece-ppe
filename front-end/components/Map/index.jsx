@@ -22,10 +22,12 @@ export default ({ amaps, loading, styles }) => {
   const { position, zoom } = useQuery()
 
   return (
-    <div className={styles.side}>
-      <MapBg position={position} zoom={zoom}>
-        {!loading && amaps.map(amap => (<Marker amap={amap} />))}
-      </MapBg>
+    <div className={styles.mapSide}>
+      <div className={styles.map}>
+        <MapBg position={position} zoom={zoom}>
+          {!loading && amaps.map(amap => (<Marker amap={amap} />))}
+        </MapBg>
+      </div>
     </div>
   )
 }

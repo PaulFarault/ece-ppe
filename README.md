@@ -14,7 +14,7 @@ cd amap
 ### Base de données
 Les actions suivantes concernent le dossier *db* (`cd db`)
 
-* Uniquement la première fois : builder l'image en local à partir du `Dockerfile`
+* **La première fois** : builder l'image en local à partir du `Dockerfile`
 ``` bash
 docker build -t amapdb .
 ```
@@ -29,15 +29,26 @@ docker-compose up -d
 ### Back-end
 Les actions suivantes concernent le dossier *back-end* (`cd back-end`)
 
-* Uniquement la première fois : installer les dépendances
+* **La première fois** : installer les dépendances
 ``` bash
 npm install
 ```
 
+* Lancer le serveur
+``` bash
+npm run dev
+```
+
+* Remettre à zéro la base de données
+``` bash
+npm run reset
+```
+
+
 ### Front-end
 Les actions suivantes concernent le dossier *front-end* (`cd front-end`)
 
-* Uniquement la première fois : installer les dépendances
+* **La première fois** : installer les dépendances
 ``` bash
 npm install
 ```

@@ -1,9 +1,27 @@
-.side {
-  width: 50%;
+.main {
+  position: relative;
+  min-height: calc(100vh);
 }
 
-.main {
-  height: calc(100vh - 80px);
-  display: flex;
-  flex-flow: row wrap;
+.listSide {
+  padding-top: 80px;
+  min-width: 450px;
+  width: 50%;
+  height: 100%;
 }
+
+.mapSide {
+  width: 50%;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+}
+
+.map {
+  height: calc(100vh - 80px);
+  position: sticky;
+  top: 80px;
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
+} 

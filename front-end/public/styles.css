@@ -1,15 +1,13 @@
 * {
   margin:0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color :rgb(179, 212, 182);
+  background-color: rgb(252, 248, 242);
 }
-header {
 
-    background-color :rgb(213, 236, 214);
-}
 h1 {
     display :flex;
     justify-content : space-evenly;
@@ -38,7 +36,6 @@ h3 {
 }
 
 .paragraph{
-    background-color: rgb(179, 212, 182);
     display : flex ;
     justify-content : space-evenly ;
     align-items: center;
@@ -49,7 +46,6 @@ h3 {
     margin-left: 10%;
 }
 .paragraph2{
-    background-color: rgb(179, 212, 182);
     display : flex ;
     justify-content :space-evenly ;
     align-items: center;

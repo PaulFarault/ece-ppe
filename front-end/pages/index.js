@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Component } from 'react/cjs/react.production.min'
+
 
 const Index = () => {
   const [searchText, setSearchText] = useState('')
@@ -30,11 +30,7 @@ const Index = () => {
         <title>PPE - AMAP</title>
       </Head>
 
-      <Layout>
-        <header>
-          <img src="/projet/logo.png" width='20%' />
-          <h1>ACCUEIL</h1>
-        </header>
+      <Layout title={"Accueil"}>
 
         <form>
           <div className='paragraph'>
