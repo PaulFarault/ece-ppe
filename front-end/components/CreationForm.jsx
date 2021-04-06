@@ -113,22 +113,10 @@ export default () => {
 
             </Grid>
             <Grid item xs={6}>
-              <TextField
-                id="lat"
-                label="Latitude"
-                fullWidth
-                value={lat}
-                onChange={e => setLat(e.target.value)}
-              />
+              <Typography variant="caption">Lat: {lat}</Typography>
             </Grid>
             <Grid item xs={6}>
-              <TextField
-                id="long"
-                label="Longitude"
-                fullWidth
-                value={long}
-                onChange={e => setLong(e.target.value)}
-              />
+              <Typography variant="caption">Long: {long}</Typography>
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -148,13 +136,15 @@ export default () => {
                 onChange={e => setEmail(e.target.value)}
               />
             </Grid>
-            <Button
-              variant="contained"
-              type="submit"
-              color="primary"
-            >
-              Ajouter mon AMAP
+            <div style={{ textAlign: "center", width: "100%" }}>
+              <Button
+                variant="contained"
+                type="submit"
+                color="primary"
+              >
+                Ajouter mon AMAP
               </Button>
+            </div>
           </Grid>
         </Paper>
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
