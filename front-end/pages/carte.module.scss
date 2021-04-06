@@ -1,6 +1,6 @@
 .main {
   position: relative;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh);
 }
 
 .listSide {
@@ -22,4 +22,6 @@
   height: calc(100vh - 80px);
   position: sticky;
   top: 80px;
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
 } 

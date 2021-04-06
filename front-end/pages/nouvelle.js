@@ -12,9 +12,6 @@ const Nouvelle = () => {
       </Head>
 
       <Layout>
-        <header>
-          <h1>CREATION NOUVELLE AMAP</h1>
-        </header>
 
         <CreationForm />
 

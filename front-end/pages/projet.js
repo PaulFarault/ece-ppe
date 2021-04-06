@@ -10,12 +10,7 @@ const Projet = () => {
         <title>Projet</title>
       </Head>
 
-      <Layout>
-
-        <header>
-          <img src="/projet/logo.png" width='20%' />
-          <h1>NOTRE PROJET</h1>
-        </header>
+      <Layout title={"Le projet"}>
 
         <article>
           <h2>Rejoins une AMAP !</h2>
